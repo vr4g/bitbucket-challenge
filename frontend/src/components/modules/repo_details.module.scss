@@ -1,0 +1,118 @@
+h2{
+   text-transform: capitalize;
+   margin:auto;
+   margin-top: 20px;
+}
+
+.info{
+    margin: 10px 20px;
+    text-align: left;
+}
+
+p{
+    margin-left: 70px;
+}
+
+h4{
+    margin: 10px 0 0 10px;
+    text-align: left;
+}
+
+.accessLevel{
+    margin: auto;
+    padding: 5px 0;
+    width: 100px;
+    border: 1px solid black;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+form{
+    display:block;
+}
+
+input{
+    margin-bottom:10px;
+}
+
+input[type=submit]{
+   width: 200px;
+}
+input[type=submit]:hover{
+  cursor: pointer;
+  transition: 0.7s;
+  background-color: rgba(0, 200, 0, 0.5);
+}
+
+.formStyle{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+.left{
+    width: 50%;
+    border-right: 1px solid black;
+}
+
+.right{
+    width:50%;
+}
+
+.leftRight{
+    margin-top: 20px;
+    display:flex;
+    height: 80vh;
+}
+
+.btn{
+    margin:auto;
+    margin-bottom: 10px;
+    display:block;
+    width: 250px;
+    height: 30px;
+    border-radius: 7px;
+    padding: 0 15px;
+    border: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(93, 88, 114);
+    color:white;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(22, 13, 68);
+    transition: 0.4s;
+}
+
+.inlineInfo{
+    padding: 0 10px;
+    margin-bottom: 7px;
+    display:flex;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+
+.inlineInfo h4{
+    font-style: normal;
+    margin:0;
+}
+
+.btnDelete{
+    @extend .btn;
+    background-color: rgb(228, 111, 111);
+    color:white;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(230, 43, 43);
+        transition: 0.3s;
+    }
+}

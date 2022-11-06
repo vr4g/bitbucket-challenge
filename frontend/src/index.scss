@@ -1,0 +1,147 @@
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+$border: 2px solid rgba(119,119,119, 0.5);
+
+
+form{
+  display:flex;
+  justify-content: center;
+}
+
+form input{
+  width: 300px;
+  height: 25px;
+  border-radius: 5px;
+}
+button{
+  height: 25px;
+  padding: 3px 10px;
+  background-color: lightblue;
+  border-radius: 2px;
+  margin: 5px;
+}
+
+.container{
+  display:flex;
+  padding: 10px 15px;
+  width: 100%;
+  min-width: 50%;
+  height: 90vh;
+}
+
+.details{
+  padding-top: 10px;
+  width:100%;
+  border-radius: 10px;
+}
+
+.workspaces{
+  padding: 0;
+  color:646161;
+  font-size: 1.1rem;
+  background-color: #F1F1F1;
+  height: 100vh;
+  font-size: 0.8rem;
+  width: 180px;
+  border-right: $border;
+}
+
+.repos{
+  padding: 0 5px;
+  width:200px;
+  border-right: $border;
+  font-size: 0.85rem;
+}
+
+
+.main-body{
+
+  display: flex;
+}
+
+.details-container{
+  display:block;
+  width: 85%;
+}
+
+.info{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #EBEBEB;
+  letter-spacing: 0.1rem;
+  height: 40px;
+  background-color: #9095A0;
+}
+
+.heading{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+  border-bottom: $border;
+}
+
+
+.details{
+  display:flex;
+}
+
+h3{
+  margin: auto;
+  padding-top: 20px;
+}
+
+
+.btn{
+  margin: 0;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 7px;
+  padding: 0 40px;
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  background-color: rgb(228, 111, 111);
+  color:white;
+  &:hover{
+    cursor: pointer;
+    background-color: rgb(230, 43, 43);
+    transition: 0.3s;
+  }
+}
+
+
+.btn-add{
+  @extend .btn;
+  height: 25px;
+  font-size: 1rem;
+  padding: 0 20px;
+  background-color: rgb(116, 228, 121);
+  &:hover{
+    background-color: rgb(3, 196, 12);
+
+  }
+}
+
+.more-info{
+  width: 100%;
+}

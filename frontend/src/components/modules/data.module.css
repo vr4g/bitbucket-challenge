@@ -1,0 +1,38 @@
+/* .main{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display:block;
+    height: 100px;
+    text-align: left;
+    border-bottom: 1px solid black;
+} */
+
+/* .dataName{
+    display: flex;
+    justify-content: space-between;
+} */
+
+/* .dataInfo{
+  margin: 10px 0 0 20px;  
+
+} */
+
+/* .buttons{
+     width: 150px; 
+   width: 20px
+} */
+
+.card{
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px 5px;
+    min-height: 40px;
+}
+
+.card:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: rgba(0,0,0,0.5);
+    color:white;
+}

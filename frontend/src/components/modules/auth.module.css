@@ -1,0 +1,68 @@
+.loginForm{
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 20px 50px;
+    padding-bottom: 70px;
+}
+
+.loginHeading{
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin:0;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.inputText{
+    padding: 0 20px;
+    display: block;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(0, 0,150, 0.5);
+    color:white;
+    margin-bottom: 20px;
+}
+
+.inputText::placeholder{
+    color:white;
+}
+
+.inputText:active{
+    outline:red;
+}
+
+
+.inputText:focus{
+    box-shadow: 0 0 7px rgba(0, 0,250, 1);
+    outline: none;
+}
+.inputSubmit{
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    background-color: blue;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color:white;
+    margin:auto;
+    width: 100%;
+}
+
+.body{
+    height: 100vh;
+    background-image: linear-gradient(45deg, blue , aqua) ;
+}
+
+.login{
+    height: 60vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+ text-align: center;
+
+}
