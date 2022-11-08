@@ -10,25 +10,23 @@ function App() {
   const [issues, setIssues] = useState([]);
   const [selectedRepo, setSelectedRepo] = useState([]);
   const [name, setName] = useState("");
-  const [refresh, setRefresh] = useState(false);
   const [auth, setAuth] = useState(false);
   const [workspaces, setWorkspaces] = useState([]);
   const [selectedWorkspace, setSelectedWorkspace] = useState("");
   const [addNew, setAddNew] = useState(false);
 
   useEffect(() => {
-    showAll();
-  }, [refresh]);
-
-  async function showAll() {
-    const response = await fetch("http://localhost:5000/workspaces");
-    if (!response.ok) {
-      console.log("Error!");
+    if (auth) {
+      showAll();
     }
+  }, [auth]);
 
-    const data = await response.json();
+  const showAll = async () => {
+    const response = await axios.get("http://localhost:5000/workspaces");
+
+    const data = await response.data;
     setWorkspaces(data.values);
-  }
+  };
 
   const addRepo = async (workspace) => {
     const options = {
@@ -48,8 +46,6 @@ function App() {
     );
     const data = await response.data;
 
-    setRefresh((current) => !current);
-
     return data;
   };
 
@@ -57,6 +53,9 @@ function App() {
     if (!window.confirm("Da li ste sigurni?")) {
       return;
     }
+
+    console.log(repo_slug);
+    console.log(workspace);
 
     const options = {
       method: "DELETE",
@@ -104,22 +103,6 @@ function App() {
     const data = await response.data;
     setSelectedRepo(data);
   };
-
-  /*   const getRepos = async (workspace) => {
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(
-      `http://localhost:5000/repos/${workspace}`,
-      options
-    );
-    const data = await response.json();
-    console.log(data);
-    setRepos(data);
-  }; */
 
   const getIssues = async (repo_slug) => {
     const options = {

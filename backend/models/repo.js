@@ -1,4 +1,3 @@
-//const base64 = require("base-64");
 const axios = require("axios");
 const qs = require("query-string");
 
@@ -27,26 +26,25 @@ login = async (req, res) => {
     token = response.data.access_token;
     res.sendStatus(200);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
-/* login = async (req, res) => {
-  USER_NAME = req.query.username;
-  PASSWORD = req.query.password;
+
+getWorkspaces = async (req, res) => {
   try {
     const response = await axios({
       url: `${URL_PREFIX}/workspaces`,
       method: "get",
       headers: {
-        Authorization: "Basic " + base64.encode(USER_NAME + ":" + PASSWORD),
+        Authorization: "Bearer " + token,
+        Accept: "application/json",
       },
     });
     res.json(response.data);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
-}; */
-
+};
 getPullRequestsOnRepo = async (req, res) => {
   try {
     const response = await axios({
@@ -59,7 +57,7 @@ getPullRequestsOnRepo = async (req, res) => {
     });
     res.json(response.data);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -75,23 +73,7 @@ getCommits = async (req, res) => {
     });
     res.json(response.data);
   } catch (err) {
-    console.log(err);
-  }
-};
-
-getWorkspaces = async (req, res) => {
-  try {
-    const response = await axios({
-      url: `${URL_PREFIX}/workspaces?pagelen=100`,
-      method: "get",
-      headers: {
-        Authorization: "Bearer " + token,
-        Accept: "application/json",
-      },
-    });
-    res.json(response.data);
-  } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -106,7 +88,7 @@ getRepos = async (req, res) => {
     });
     res.json(response.data);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -121,7 +103,7 @@ getRepoBySlug = async (req, res) => {
     });
     res.json(response.data);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -150,7 +132,7 @@ addRepo = async (req, res) => {
       data: bodyData,
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -164,7 +146,7 @@ deleteRepo = async (req, res) => {
       },
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -180,7 +162,7 @@ getIssues = async (req, res) => {
     });
     res.json(response.data);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 

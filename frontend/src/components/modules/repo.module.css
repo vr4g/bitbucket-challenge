@@ -1,12 +1,3 @@
-/* .main{
-    margin-top: 10px;
-    margin-bottom: 15px;
-    display:block;
-    height: 100px;
-    text-align: left;
-    border-bottom: 1px solid black;
-}
- */
 .dataName{
     display: flex;
     justify-content: space-between;

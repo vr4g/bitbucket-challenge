@@ -11,8 +11,6 @@ const RepoDetails = ({ repo, onDelete, onClickIssues, issues }) => {
   const [showIssues, setShowIssues] = useState(false);
   const [showPullRequests, setShowPullRequests] = useState(false);
   const [showCommits, setShowCommits] = useState(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
   const [pullRequests, setPullRequests] = useState([]);
   const [commits, setCommits] = useState([]);
 
@@ -82,7 +80,14 @@ const RepoDetails = ({ repo, onDelete, onClickIssues, issues }) => {
         </div>
         <div className={Style.right}>
           <div>
-            <button className={Style.btnDelete}>Delete repo</button>
+            <button
+              className={Style.btnDelete}
+              onClick={() => {
+                onDelete(repo.slug, repo.workspace.slug);
+              }}
+            >
+              Delete repo
+            </button>
             <button
               className={Style.btn}
               onClick={() => {
